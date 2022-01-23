@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?version=1">
+    <title>weather app</title>
+</head>
+
+<body>
+    <div class="tempbylocation">
+        <h1 class="h1">Get by Location</h1>
+        <button class="getLocationbtn btn">Get Location</button>
+        <button id="fbtn">temperature in Fahrenheit</button>
+            <p class="w_c w_style  f-family"></p>
+            <p class="w_s w_style f-family"></p>
+            <img id="Wicon">
+            <p class="w_t f-family w_style"></p>
+            <p class="w_temp w_style"></p>
+    </div>
+    <div class="tempbyinput">
+        <h1 class="h1">Search by Name</h1>
+        <div id="input">
+            <h3 style="color:white;font-weight: 300;margin: unset;">TODAY'S WEATHER</h3>
+            <input type="text" placeholder="Enter your city" id="city"/>
+            <br>
+            <button id="btn1" class="btns">Get Temperature</button>
+            <button id="btn2" class="btns">Change Value</button>
+        </div>
+        <div id="output">
+            <img style="width:100px;" id="icon" />
+            <p id="info"></p>
+        </div>
+    </div>
+    <script src="weather.js"></script>
+</body>
+
+</html>

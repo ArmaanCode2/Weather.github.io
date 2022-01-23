@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Ubuntu:wght@300;500&display=swap');
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        
+        .w_style{
+            margin: 0 0 0 210px;
+        }
+        
+        .w_c{
+            font-size: 30px;
+            font-weight: 500;
+        }
+        
+        .w_s{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .w_temp{
+            font-size: 85px;
+            font-weight: 500;
+        }
+        
+        .f-family{
+            font-family: 'Merriweather', serif;
+        }
+        
+        .getLocationbtn{
+            font-size: 25px;
+            font-weight: 500;
+            padding: 10px 20px;
+            border:none;
+            border-radius:10px;
+            color:white;
+            background:linear-gradient(#491249 10%,#491240 10%,#24282e 80%);
+            width: fit-content;
+            margin: auto;
+        }
+
+        h1{
+            text-align: center;
+        }
+        
+        b{
+            color: red;
+        }
+        
+        #output #icon,#info{
+            margin: auto;
+        }
+        
+        #output {
+            font-weight: bold;
+            background-color: aquamarine;
+            margin: auto;
+            width: 60%;
+            margin-top: 2%;
+            border-radius: 10px;
+            padding: 10px;
+            color: black;
+            visibility: hidden;
+            display: grid;
+            grid-template-rows: 100px 60px;
+        }
+        
+        input {
+            height: fit-content;
+            width: 60%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        .btns {
+            background: seashell;
+            color: black;
+            padding: 10px;
+            margin-top: 2%;
+            border: none;
+            border-radius: 9px;
+            width: 125px;
+        }
+        
+        .tempbylocation {
+            display: grid;
+            grid-template-rows: 110px 50px 80px 40px 20px 40px 20px;
+            background: rgba(0, 0, 255, 0.6);
+            border-radius: 5px;
+            height: 97vh;
+        }
+        
+        
+        .tempbyinput {
+            background: rgba(255, 0, 0, 0.6);
+            border-radius: 5px;
+        }
+        
+        #input {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+            background-color: darkslategray;
+            margin-top: 10%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #fbtn {
+            visibility: hidden;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            background: black;
+            width: 195px;
+            height: 35px;
+            margin: auto;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        #b1{
+            font-size: 20px;
+        }
+        #b2{
+            font-size: 50px;
+        }
+
+        #Wicon{
+            color:black;
+            margin: -15px 0 0 190px;
+            visibility:hidden;
+        }
+        
+        @media only screen and (max-width: 1150px) {
+            .tempbylocation{
+                background: rgba(255, 0, 0, 0.6);
+            }
+            body{
+                display:block;
+            }
+            .w_style {
+                margin: 0 0 0 120px;
+            }
+            #Wicon{
+                margin: -15px 0 0 105px;
+            }
+            .w_temp{
+                font-size: 45px;
+                font-weight: 200;
+            }
+        }
