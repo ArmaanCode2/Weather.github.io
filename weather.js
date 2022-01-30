@@ -10,7 +10,6 @@ const Wicon = document.querySelector("#Wicon");
 //API Keys
 const apiKey = "2b035229e8834c73b29ca4a714946885";
 const wetherKey = "8366237814cd4072a7e201444221901";
-const openMapApi = "49fd6f61e2b89421e0c3b527bc26efd6";
 
 //get temp from input selectors
 const ibtn = document.querySelector("#btn1");
@@ -81,20 +80,18 @@ ibtn.addEventListener("click", () => {
   const info = document.querySelector("#info");
   document.querySelector("#output").style.visibility = "visible";
   if (input) {
-    const inputURL = `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${openMapApi}`;
+    const inputURL = `https://api.weatherapi.com/v1/current.json?q=${input}&key=${wetherKey}`;
     fetch(inputURL)
       .then((response) => response.json())
       .then((result) => {
-        const inpTempC = (result.main.temp - 273.15).toFixed(1) + "°C";
-        const inpTempf = ((result.main.temp * 9) / 5 - 459.67).toFixed(1) + "°F";
-        const cityName = result.name;
-        const tempType = result.weather[0].main;
+        const inpTempC = result.current.temp_c + "°C";
+        const inpTempf = result.current.temp_f + "°F";
+        const cityName = result.location.name;
+        const tempType = result.current.condition.text;
         var inpTempinC = true;
         var line = cityName + ", " + tempType + "  " + inpTempC;
         info.innerHTML = line;
-        const icon2 = result.weather[0].icon;
-        const iconImg = "http://openweathermap.org/img/wn/" + icon2 + "@2x.png";
-        icon.src = iconImg
+        icon.src = result.current.condition.icon;
         ibtn2.addEventListener("click", () => {
           inpTempinC = !inpTempinC
           if(inpTempinC){
@@ -112,6 +109,6 @@ ibtn.addEventListener("click", () => {
       })
     } else {
       icon.src = "error.png";
-      info.innerHTML = "You need to Enter Something the <b>INPUT BOX</b>";
+      info.innerHTML = "You need to Enter Something in the <b>INPUT BOX</b>";
     }
   })
