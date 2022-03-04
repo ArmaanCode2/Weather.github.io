@@ -102,6 +102,9 @@ ibtn.addEventListener("click", () => {
             info.innerHTML = line
           }
         })
+        //bg image dal rha hu output window ki
+        const output = document.querySelector("#output");
+        output.style.backgroundImage  = "url('CloudsIMG.jpg')";
       })
       .catch((err) => {
         info.innerHTML = "Please Enter a valid <b>CITY</b> name";
