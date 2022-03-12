@@ -7,6 +7,7 @@ const p_t = document.querySelector(".w_t");
 const p_temp = document.querySelector(".w_temp");
 const fbtn = document.querySelector("#fbtn");
 const Wicon = document.querySelector("#Wicon");
+const output = document.querySelector("#output");
 //API Keys
 const apiKey = "2b035229e8834c73b29ca4a714946885";
 const wetherKey = "8366237814cd4072a7e201444221901";
@@ -103,15 +104,16 @@ ibtn.addEventListener("click", () => {
           }
         })
         //bg image dal rha hu output window ki
-        const output = document.querySelector("#output");
         output.style.backgroundImage  = "url('CloudsIMG.jpg')";
       })
       .catch((err) => {
         info.innerHTML = "Please Enter a valid <b>CITY</b> name";
         icon.src = "error2.png";
+        output.style.backgroundImage  = "";
       })
     } else {
       icon.src = "error.png";
       info.innerHTML = "You need to Enter Something in the <b>INPUT BOX</b>";
+      output.style.backgroundImage  = "";
     }
   })
